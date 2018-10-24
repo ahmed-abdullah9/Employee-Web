@@ -1,5 +1,5 @@
 <?php
-  class New {
+  class TheNew {
     private $db;
 
     public function __construct(){
@@ -27,13 +27,13 @@
           // Add News
     public function addNews($data){
         // Prepare Query
-        $this->db->query('INSERT INTO News (title, Description, Summary) 
-        VALUES (:title, :Description, :Summary)');
+        $this->db->query('INSERT INTO News (Title, Description, Summary) 
+        VALUES (:title, :description, :summary)');
   
         // Bind Values
         $this->db->bind(':title', $data['title']);
-        $this->db->bind(':Description', $data['Description']);
-        $this->db->bind(':Summary', $data['Summary']);
+        $this->db->bind(':description', $data['description']);
+        $this->db->bind(':summary', $data['summary']);
         
         //Execute
         if($this->db->execute()){
